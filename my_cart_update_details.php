@@ -19,10 +19,6 @@
     $home_address = $_GET["homeAddress"];
     $postcode     = $_GET["postcode"];
     $telephone   = $_GET["telephone"];
-    $profile_image = $_GET["profile_image"];
-
-
-echo($profile_image);
 
     // Check the status of the connection
     if ($conn->connect_error)

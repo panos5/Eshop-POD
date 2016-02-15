@@ -61,7 +61,6 @@ $(document).ready(function () {
 
 
 function previewFile(){
-
     var preview = document.getElementById('profile_image'); //selects the query named img
     var file    = document.getElementById('image_file_to_upload').files[0]; //sames as here
     var reader  = new FileReader();
@@ -75,6 +74,5 @@ function previewFile(){
     } else {
         preview.src = "";
     }
-
 }
 
