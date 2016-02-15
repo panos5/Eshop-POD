@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+
+    <head>
+
+        <meta charset="UTF-8">
+        <title> Title </title>
+
+        <link rel="stylesheet" type="text/css" href="login_style.css">   <!--Link with external css file regarding styling of the HTML file-->
+        <link rel="stylesheet" type="text/css" href="common_form_style.css">   <!--Link with external css file regarding styling of the HTML file-->
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script> <!--Import the jquery library from google CDN-->
+
+        <script src="login_client.js"></script>  <!--Import of external javascript file-->
+
+
+    </head>
+
+
+    <body background="Images/light_background_texture.jpg">
+
+        <div id="TBar"></div>
+
+        <div id="login_container">
+
+            <form name="login_form" id ="login_form">
+
+                    <label  for="userName" style="width:150px">User name :</label>
+                    <input  type="text" class ="input_elements" id="userName" name="userName"><br>
+                    <label  for="userPassword" style="width:150px">Password :</label>
+                    <input  type="password" class ="input_elements" id="userPassword"  name="userPassword"><br>
+                    <div style="float:right; margin-top:10px;"> <input type="checkbox" id="toggle_password"  name="toggle_password" value="show password" ><span id="toggle_password_lbl" style="font-size:14px;">show my password</span></div><br>
+                    <input  type="button"  class="animate action-button" id="log_in_button" name="login_button" value="Log in" style="margin-top:15px; width:135px; text-align: center;">
+
+            </form>
+
+
+        </div>
+
+
+        <div id="Bar"></div>
+
+        <script>
+            $(document).ready(function() {
+                $("#Bar").load("bottom_bar.html");
+                $("#TBar").load("top_bar.html");
+            });
+        </script>
+
+    </body>
+
+</html>

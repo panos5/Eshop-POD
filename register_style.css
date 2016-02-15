@@ -1,0 +1,55 @@
+
+@-webkit-keyframes bounce {
+    to { -webkit-transform: scale(0.8); }
+}
+@-moz-keyframes bounce {
+    to { -moz-transform: scale(0.8); }
+}
+@keyframes bounce {
+    to { transform: scale(0.8); }
+}
+
+
+#register_form {
+
+    position         : relative;
+    width            : 950px;
+    height           : 330px;
+    background-image : url("Images/paper_texture.jpg");
+    border-radius    : 30px;
+    padding          : 10px;
+    box-shadow       : 10px 10px 9px #888888;
+    margin           : 0 auto;
+    margin-top       : 50px;
+
+}
+
+
+#form_lhs {
+
+    display : inline-block;
+    width   : 435px;
+    height  : 275px;
+
+}
+
+
+#form_rhs {
+
+    display     : inline-block;
+    width       : 435px;
+    height      : 275px;
+    margin-left : 30px;
+
+}
+
+
+.red_empty_borders {
+
+    border :2px dotted #ff0024 ;
+    -webkit-animation: bounce .3s 4 linear alternate;
+    -moz-animation: bounce .3s 4 linear alternate;
+    animation: bounce .3s 4 linear alternate;
+
+}
+

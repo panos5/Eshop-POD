@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+
+    <head>
+            <meta charset="UTF-8">
+            <title> Title </title>
+
+            <link rel="stylesheet" type="text/css" href="register_style.css">   <!--Link with external css file regarding styling of the HTML file-->
+            <link rel="stylesheet" type="text/css" href="common_form_style.css">
+            <link href='http://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet'>
+
+            <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+            <script src="register_client.js"></script>  <!--Import of external javascript file-->
+
+    </head>
+
+
+    <body background="Images/light_background_texture.jpg">
+
+            <div id="TBar"></div>
+
+            <div style="display:block; margin-top:100px; height:420px;">
+
+                <form name="register_form" id ="register_form">
+
+                    <div id="form_lhs">
+
+                        <label  for="userName">Select a user name :</label>
+                        <input  type="text" class ="input_elements" id="userName" name="userName"><br>
+
+                        <label  for="userPassword">Select a password :</label>
+                        <input  type="password" class ="input_elements" id="userPassword" name="userPassword"><br>
+
+                        <label  for="repeatPassword">Repeat the password :</label>
+                        <input  type="password"  class ="input_elements" id="repeatPassword" name="repeatPassword"><br>
+
+                        <label  for="firstName">Enter your first name :</label>
+                        <input  type="text" class ="input_elements" id="firstName" name="firstName" ><br>
+
+                        <label  for="lastName">Enter your last name :</label>
+                        <input  type="text"  class ="input_elements" id="lastName" name="lastName"><br>
+
+                    </div>
+
+                    <div id="form_rhs">
+
+                        <label  for="userEmail">Enter your email address :</label>
+                        <input  type="email" class ="input_elements" id="userEmail" name="userEmail"><br>
+
+                        <label for="userAddress1"> Enter your street number :</label>
+                        <input type="text" class ="input_elements" id="userAddress1" name="userAddress1" ><br>
+
+                        <label for="userAddress2"> Enter your house number :</label>
+                        <input type="text" class ="input_elements" id="userAddress2" name="userAddress2" ><br>
+
+                        <label for="userPostCode"> Enter your postcode :</label>
+                        <input type="text" class ="input_elements" id="userPostCode" name="userPostCode" ><br>
+
+                        <label for="userTelephone"> Enter your tel, number :</label>
+                        <input type="tel" class ="input_elements" id="userTelephone" name="userTelephone" ><br>
+
+                    </div>
+
+                    <input type="button" class="action-button animate"  id="register_button" name="register_button" value="Register" onclick="" style="width:130px; margin-top:8px;">
+
+                </form>
+
+            </div>
+
+            <div id="Bar"></div>
+
+            <script>
+                $(document).ready(function() {
+
+                    $("#Bar").load("bottom_bar.html");
+                    $("#TBar").load("top_bar.html");
+                });
+
+            </script>
+
+    </body>
+
+</html>

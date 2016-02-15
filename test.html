@@ -1,0 +1,88 @@
+<!--<html lang="en">
+
+     <head>
+
+         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+
+        <style>
+
+
+        </style>
+
+
+
+    </head>
+
+     <body>
+
+     <script type='text/javascript'>
+
+         function main()
+         {
+             var inputFileToLoad = document.createElement("input");
+             inputFileToLoad.type = "file";
+             inputFileToLoad.id = "inputFileToLoad";
+             document.body.appendChild(inputFileToLoad);
+
+             var buttonLoadFile = document.createElement("button");
+             buttonLoadFile.onclick = loadImageFileAsURL;
+             buttonLoadFile.textContent = "Load Selected File";
+             document.body.appendChild(buttonLoadFile);
+         }
+
+         function loadImageFileAsURL()
+         {
+             var filesSelected = document.getElementById("inputFileToLoad").files;
+             if (filesSelected.length > 0)
+             {
+                 var fileToLoad = filesSelected[0];
+
+                 if (fileToLoad.type.match("image.*"))
+                 {
+                     var fileReader = new FileReader();
+                     fileReader.onload = function(fileLoadedEvent)
+                     {
+                         var imageLoaded = document.createElement("img");
+                         imageLoaded.src = fileLoadedEvent.target.result;
+                         document.body.appendChild(imageLoaded);
+                     };
+                     fileReader.readAsDataURL(fileToLoad);
+                 }
+             }
+         }
+
+         main();
+
+     </script>
+
+     </body>
+</html>-->
+
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>jQuery UI Dialog - Default functionality</title>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+    <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+    <link rel="stylesheet" href="/resources/demos/style.css">
+    <script>
+        $(function() {
+            $( "#dialog" ).dialog();
+        });
+    </script>
+</head>
+<body>
+
+<div id="dialog" title="Update confirmation">
+    <p>Are you sure you want to update your details?</p>
+    <input  type="button"  class="animate action-button" id="log_in_button" name="login_button" value="Yes">
+    <input  type="button"  class="animate action-button" id="logg_in_button" name="login_button" value="No">
+
+</div>
+
+
+</body>
+</html>

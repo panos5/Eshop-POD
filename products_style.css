@@ -1,0 +1,41 @@
+#products_panel {
+
+    display    : block;
+    height     : 450px;
+}
+
+
+
+.list_details {
+
+    border          : 6px double #800080;
+    box-shadow      : 10px 10px 5px #888888;
+    display         : inline-block;
+    float           : left;
+    margin          : 35px;
+    padding         : 7px;
+    border-radius   : 10px;
+    list-style-type : none;
+    font-size       : 16px;
+
+}
+
+
+
+.add_product {
+
+    margin           : 15px auto;
+    padding          : 10px 10px;
+    border-radius    : 7px;
+    display          : block;
+    text-align       : center;
+    color            : white;
+    text-shadow      : 2px 3px #2980B9;
+    background       : #3498DB url(Images/shop_cart2.png) no-repeat left;
+    width            : 120px;
+    height           : 40px;
+    text-indent      : 15px;
+    border-bottom    : 3px solid cornflowerblue;
+    text-shadow      : 2px 3px #2980B9;
+
+}

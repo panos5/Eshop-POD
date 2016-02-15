@@ -1,0 +1,39 @@
+#main_page_container {
+
+    display    : block;
+    margin-top : 150px;
+
+}
+
+.slideshow
+{
+
+    width                 : 600px;
+    height                : 275px;
+    margin                : 50px auto;
+    background-color      : #000;
+    padding               : 0;
+    border-radius         : 20px;
+    -webkit-border-radius : 20px;
+    -moz-border-radius    : 20px;
+
+}
+
+
+.slideshow ul, .slideshow li
+{
+    margin  : 0;
+    padding : 0;
+}
+
+
+.slideshow img {
+
+    max-height            : 275px;
+    width                 : 600px;
+    border                : 0px solid white;
+    -webkit-border-radius : 20px;
+    -moz-border-radius    : 20px;
+    border-radius         : 20px;
+    box-shadow            : 5px 5px 30px #4488CC;
+}

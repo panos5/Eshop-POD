@@ -1,0 +1,45 @@
+
+
+@-webkit-keyframes bounce {
+    to { -webkit-transform: scale(0.8); }
+}
+@-moz-keyframes bounce {
+    to { -moz-transform: scale(0.8); }
+}
+@keyframes bounce {
+    to { transform: scale(0.8); }
+}
+
+
+#login_container {
+
+
+    margin-top    : 120px;
+    text-align    : center;
+    display       : block;
+    margin-bottom : 200px;
+
+}
+
+
+#login_form {
+
+    display          : inline-block;
+    width            : 350px;
+    height           : 185px;
+    background-image : url("Images/paper_texture.jpg");
+    border-radius    : 20px;
+    box-shadow       : 10px 10px 9px #888888;
+    padding          : 20px;
+
+}
+
+
+.empty_field {
+
+    border : 2px dotted #ff0024;
+    -webkit-animation: bounce .3s 2 linear alternate;
+    -moz-animation: bounce .3s 2 linear alternate;
+    animation: bounce .3s 2 linear alternate;
+
+}

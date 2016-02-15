@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+
+        <link rel="stylesheet" type="text/css" href="my_cart_center_panel.css">
+        <link rel="stylesheet" type="text/css" href="my_profile_style.css">
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+
+        <script src="my_cart_load_details.js"></script>
+        <script src="my_cart_update_details.js"></script>
+
+    </head>
+
+    <body>
+
+        <div id="my_details_panel" style="margin-top:100px; margin-bottom: 50px;">
+
+            <h4> My Profile</h4>
+
+            <ul  class="right_list_elem_profile">
+
+                <div id="details_form">
+
+
+               <!--     <div id="upload_photo">
+
+                        <label for="imageupload">Image file:</label>
+                        <input name="imageupload" id="imageupload" type="file" /><br />
+                        <input name="submit" id="submit" type="submit" value="submit" </form>
+
+                    </div>-->
+
+                    <label  for="userName">User name</label>
+                    <input  type="text" class ="input_elements" id="userName" name="userName" disabled><br>
+
+                    <label  for="userPassword">Password</label>
+                    <input  type="password" class ="input_elements" id="userPassword" name="userPassword"><br>
+
+                    <label  for="firstName">First name</label>
+                    <input  type="text" class ="input_elements" id="firstName" name="firstName" ><br>
+
+                    <label  for="lastName">Last name</label>
+                    <input  type="text"  class ="input_elements" id="lastName" name="lastName"><br>
+
+                    <label  for="userEmail">Email address</label>
+                    <input  type="email" class ="input_elements" id="userEmail" name="userEmail"><br>
+
+                    <label for="userAddress1"> Street number</label>
+                    <input type="text" class ="input_elements" id="userAddress1" name="userAddress1" ><br>
+
+                    <label for="userAddress2"> House number</label>
+                    <input type="text" class ="input_elements" id="userAddress2" name="userAddress2" ><br>
+
+                    <label for="userPostCode"> Postcode</label>
+                    <input type="text" class ="input_elements" id="userPostcode" name="userPostCode" ><br>
+
+                    <label for="userTelephone"> Telephone number</label>
+                    <input type="tel" class ="input_elements" id="userTelephone" name="userTelephone" ><br>
+
+                </div>
+
+
+            </ul>
+
+            <div id="submit_button">
+                <input type="button"  id="update_button" name="update_button" value="Update Details">
+            </div>
+
+        </div>
+
+    </body>
+
+</html>

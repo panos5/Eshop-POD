@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+
+
+    <head>
+
+        <meta charset="UTF-8">
+        <title> Title </title>
+
+        <link href='http://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet'>
+        <link rel="stylesheet" type="text/css" href="contact_style.css">   <!--Link with external css file regarding styling of the HTML file-->
+        <link rel="stylesheet" type="text/css" href="common_form_style.css">   <!--Link with external css file regarding styling of the HTML file-->
+
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+        <script src="contact_client.js"></script>  <!--Import of external javascript file-->
+
+    </head>
+
+
+
+    <body background="Images/light_background_texture.jpg">
+
+        <div id="TBar"></div>
+
+        <div id="contact_form">
+
+            <form name="contact_by_email" id ="contact_by_email">
+
+                <h3> Contact by email </h3>
+                <label  for="userName" class="email_label_elem">Your name :</label>
+                <input  type="text" class ="input_elements" id="userName" name="userName"><br>
+                <label  for="userEmail" class="email_label_elem">Your email :</label>
+                <input  type="email" class ="input_elements" id="userEmail" name="userEmail"  ><br>
+                <textarea id="userMessage" name="userMessage"  placeholder="Enter your message here.."></textarea><br>
+                <input type="button" class="animate action-button" id="send_message_button" name="send_message_button" value="Send your message" onclick="" style="margin-top:-10px;">
+
+            </form>
+
+            <form name="contact_by_tel" id ="contact_by_tel">
+
+                <h3> Contact by telephone/post </h3>
+                <label class="tel_left_elem"> Telephone :</label>
+                <label class="tel_right_elem"> 123456789</label><br>
+                <label class="tel_left_elem"> Address :</label>
+                <label class="tel_right_elem"> 10 Kingston Palace</label><br>
+                <label class="tel_left_elem"> PostCode :</label>
+                <label class="tel_right_elem"> EH7 8DE</label><br>
+                <label class="tel_left_elem"> City :</label>
+                <label class="tel_right_elem"> Edinburgh</label><br>
+
+            </form>
+
+        </div>
+
+
+        <div id="BBar"></div>
+
+         <script>
+             $(document).ready(function() {
+                 $("#BBar").load("bottom_bar.html");
+                 $("#TBar").load("toggle_top_bar.php");
+             });
+
+         </script>
+
+    </body>
+
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+        <link rel="stylesheet" type="text/css" href="top_bar_style.css">   <!--Link with external css file regarding styling of the HTML file-->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>  <!--Import the jquery library from google CDN-->
+    </head>
+
+    <body>
+        
+        <div id="top_bar">
+        
+            <div id="site_logo">
+
+                <a href="home_page.html"><h1 id="logo_img">HandMade</h1></a>
+                <a href="home_page.html"><img id="hand_img" src="Images/hand.png"></a>
+
+            </div>
+
+
+            <div id="center_top">
+                <ul >
+                   <li id="my_profile"><a href="my_profile.html">My Profile</a></li>
+                   <li id="contact"><a href="contact.html">Contact</a></li>
+                   <li id="about"><a href="about.html">About</a></li>
+                   <li id="products"><a href="products.html">Products</a></li>
+
+                   <ul style="float:right; list-style-type:none;">
+                       <li> <a href="login.html">Login</a></li>
+                       <li> <a href="register.html">Sign-Up</a></li>
+                   </ul>
+
+                </ul>
+
+            </div>
+
+            <div id="cart">
+
+                <a href="my_cart.html" style="text-decoration:none; color:black"><span class="cart_elements">My cart</span></a>
+                <a href="my_cart.html"><img src="Images/cart.png" class="img-valign cart_elements" alt="" style="width:60px;height:60px;margin-top:-15px;margin-left:5px;"></a>
+            </div>
+            
+        </div>
+
+
+        <!--<script src="my_cart_load_details.js"></script>-->
+        <!--<script src="my_cart_update_details.js"></script>-->
+
+    </body>
+
+</html>

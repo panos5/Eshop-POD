@@ -1,0 +1,52 @@
+#about_main_container {
+
+    display    : block;
+    margin-top : 80px;
+    height     : 420px;
+
+}
+
+
+#center_panel {
+
+    position         : relative;
+    width            : 950px;
+    height           : 430px;
+    border-radius    : 30px;
+    padding          : 10px;
+    margin           : 0 auto;
+    margin-top       : 50px;
+
+}
+
+
+#left_panel {
+
+    display        : inline-block;
+    width          : 400px;
+    height         : 200px;
+    vertical-align : top;
+
+}
+
+
+#right_panel img {
+
+    width  : 420px;
+    height : 420px;
+
+}
+
+#right_panel {
+
+    display       : inline-block;
+    height        : 420px;
+    width         : 420px;
+    margin-left   : 20px;
+    margin-top    : 10px;
+
+    border-radius : 10px;
+
+
+
+}

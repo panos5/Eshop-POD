@@ -1,0 +1,65 @@
+#update_button {
+
+    width            : 180px;
+    margin-top       : 20px;
+    padding          : 2px 10px;
+    border-radius    : 8px;
+    font-family      : pacifico;
+    font-size        : 18px;
+    color            : #FFF;
+    background-color : #3498DB;
+    text-shadow      : 4px 3px #2980B9;
+    text-align       : center;
+
+}
+
+
+#update_button:active
+{
+    transform         : translate(3px,4px);
+    -webkit-transform : translate(3px,4px);
+    border-bottom     : 1px solid;
+}
+
+
+#details_form {
+
+text-align: center;
+    margin-right: 200px;
+
+}
+
+#details_form label {
+
+    width       : 180px;
+    font-size   : 16px;
+    display     : inline-block;
+    margin-left : 150px;
+
+
+}
+
+#details_form input {
+
+    margin-left : 50px;
+    box-shadow  : 2px 2px grey;
+
+}
+
+
+
+/*
+#upload_photo{
+
+    float:left;
+    margin-left : 350px;
+    border : 3px solid blue;
+    height:265px;
+    width  : 250px;
+    overflow:hidden;
+
+
+}
+*/
+
+

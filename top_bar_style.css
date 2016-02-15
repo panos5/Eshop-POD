@@ -1,0 +1,151 @@
+@font-face {
+
+    font-family : mvBoli;
+    src         : url("Fonts/mvboli.ttf");
+}
+
+@font-face {
+
+    font-family : chinese;
+    src         : url("Fonts/merkin.ttf");
+}
+
+
+body{
+
+    font-family : mvBoli;
+    font-size   : 19px;
+
+}
+
+#top_bar {
+    
+    
+    width : 1300px;
+    
+}
+
+
+#logo_img {
+
+    position : absolute;
+    width    : 235px;
+    height   : 165px;
+    left     : 155px;
+    top      : 25px;
+    font-family: chinese;
+    color: rebeccapurple;
+    font-size: 32px;
+    -ms-transform: rotate(-25deg); /* IE 9 */
+    -webkit-transform: rotate(-25deg); /* Chrome, Safari, Opera */
+    transform: rotate(-25deg);
+
+}
+
+#logo_img a:visited{
+
+    color : rebeccapurple;
+
+}
+
+
+#logo_img a:active {
+    color: rebeccapurple;
+}
+
+#hand_img {
+
+    position : absolute;
+    width    : 40px;
+    height   : 40px;
+    left     : 225px;
+    top      : 100px;
+
+}
+
+
+
+#center_top {
+
+    margin-top    : 85px;
+    display       : inline-block;
+    position      : relative;
+    width         : 950px;
+    margin-left   : 310px;
+    border-bottom : 3px solid #CCCCFF ;
+}
+
+
+#center_top ul {
+
+    list-style-type : none;
+    margin          : 0;
+    padding         : 0;
+    overflow        : hidden;
+
+}
+
+
+#center_top li {
+
+    float : left;
+}
+
+
+
+#center_top li a {
+
+    color           : black;
+    display         : inline;
+    text-align      : center;
+    padding         : 14px 19px;
+    text-decoration : none;
+}
+
+
+#center_top li :hover{
+
+    color     : darkgoldenrod;
+
+}
+
+
+#cart
+{
+    
+    display     : inline-block;
+    position    : absolute;
+    top         : 10px;
+    margin-left : 90px;
+    width       : 90px;
+    height      : 70px;
+    
+}
+
+
+.cart_elements:hover {
+
+    color : mediumpurple;
+}
+
+
+
+.img-valign {
+
+    vertical-align : middle;
+
+}
+
+
+#stay_black {
+
+    color : black;
+
+}
+
+
+#stay_black:hover{
+
+    color : black;
+
+}
