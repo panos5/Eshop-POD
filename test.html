@@ -67,6 +67,7 @@
     <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
     <script src="//code.jquery.com/jquery-1.10.2.js"></script>
     <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+    <link href='http://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet'>
 
     <script>
         $(function() {
@@ -75,12 +76,13 @@
     </script>
 
 </head>
+
 <body>
 
-<div id="dialog" title="Update confirmation">
+<div id="dialog" style= " text-align:center; font-family: Arial; font-size:15px; background: blue " title="Update confirmation">
     <p>Are you sure you want to update your details?</p>
-    <input  type="button"  class="animate action-button" id="log_in_button" name="login_button" value="Yes">
-    <input  type="button"  class="animate action-button" id="logg_in_button" name="login_button" value="No">
+    <input  type="button"  id="log_in_button" name="login_button" style="color:green;"  value="Yes">
+    <input  type="button"  id="cancel_button" name="login_button" style="color:red;" value="No">
 
 </div>
 

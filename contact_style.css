@@ -1,3 +1,14 @@
+@-webkit-keyframes bounce {
+    to { -webkit-transform: scale(0.8); }
+}
+@-moz-keyframes bounce {
+    to { -moz-transform: scale(0.8); }
+}
+@keyframes bounce {
+    to { transform: scale(0.8); }
+}
+
+
 #contact_form {
 
     display    : block;
@@ -88,8 +99,10 @@ h3 {
 
 .red_field {
 
-    border: 2px solid red;
-
+    border            : 2px dotted #ff0024;
+    -webkit-animation : bounce .3s 2 linear alternate;
+    -moz-animation    : bounce .3s 2 linear alternate;
+    animation         : bounce .3s 2 linear alternate;
 }
 
 

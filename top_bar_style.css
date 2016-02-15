@@ -28,17 +28,17 @@ body{
 
 #logo_img {
 
-    position : absolute;
-    width    : 235px;
-    height   : 165px;
-    left     : 155px;
-    top      : 25px;
-    font-family: chinese;
-    color: rebeccapurple;
-    font-size: 32px;
-    -ms-transform: rotate(-25deg); /* IE 9 */
-    -webkit-transform: rotate(-25deg); /* Chrome, Safari, Opera */
-    transform: rotate(-25deg);
+    position          : absolute;
+    width             : 235px;
+    height            : 165px;
+    left              : 155px;
+    top               : 25px;
+    font-family       : chinese;
+    color             : rebeccapurple;
+    font-size         : 32px;
+    -ms-transform     : rotate(-25deg); /* IE 9 */
+    -webkit-transform : rotate(-25deg); /* Chrome, Safari, Opera */
+    transform         : rotate(-25deg);
 
 }
 
@@ -50,7 +50,7 @@ body{
 
 
 #logo_img a:active {
-    color: rebeccapurple;
+    color : rebeccapurple;
 }
 
 #hand_img {

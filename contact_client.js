@@ -52,41 +52,41 @@ $(document).ready(function () {
         }
 
 
-        else if(user == "" || email == "")
+
+        else if(user == "" && email == "")
         {
 
-            alert("Either your email or name fields are empty!!")
+            alert("Your email and name fields are empty!!")
 
             $('#userName').addClass("red_field");
             $('#userEmail').addClass("red_field");
-
         }
+
 
         else if(email == "" && user)
         {
 
             $('#userName').removeClass("red_field");
             $('#userEmail').addClass("red_field");
-
         }
+
 
         else if(user == "")
         {
 
             $('#userName').addClass("red_field");
             $('#userEmail').removeClass("red_field");
-
         }
 
 
 
-        else if( message == "")
+      /*  else if( message == "")
         {
 
             alert("Your message is empty")
             $('#userMessage').addClass("red_field");
 
-        }
+        }*/
 
 
     });
