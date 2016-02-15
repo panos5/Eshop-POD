@@ -24,20 +24,25 @@
 
 #details_form {
 
-text-align: center;
-    margin-right: 200px;
+    position         : relative;
+    width            : 950px;
+    height           : 270px;
+    padding          : 10px;
+    margin           : 0 auto;
+    margin-top       : 50px;
+
+
 
 }
 
 #details_form label {
 
-    width       : 180px;
-    font-size   : 16px;
-    display     : inline-block;
-    margin-left : 150px;
-
+    display   : inline-block;
+    width     : 150px;
+    font-size : 16px;
 
 }
+
 
 #details_form input {
 
@@ -47,19 +52,35 @@ text-align: center;
 }
 
 
+#upload_photo_panel{
 
-/*
-#upload_photo{
-
-    float:left;
-    margin-left : 350px;
-    border : 3px solid blue;
-    height:265px;
-    width  : 250px;
-    overflow:hidden;
-
+    height      : 280px;
+    width       : 250px;
+    overflow    : hidden;
+    display     : inline-block;
+    text-align  : center;
 
 }
-*/
+
+
+#entry_details_panel {
+
+    display     : inline-block;
+    width       : 550px;
+    height      : 275px;
+    margin-left : 90px;
+
+}
+
+
+#profile_image {
+
+    border        : 2px solid black;
+    border-radius : 20px;
+    width         : 215px;
+    height        : 182px;
+    margin-top    : 25px;
+    display       : inline-block;
+}
 
 
