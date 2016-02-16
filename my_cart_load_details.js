@@ -57,7 +57,10 @@ $(document).ready(function () {
 
     });
 
+
+
 });
+
 
 
 function previewFile(){
@@ -66,6 +69,7 @@ function previewFile(){
     var reader  = new FileReader();
 
     reader.onloadend = function () {
+
         preview.src = reader.result;
     }
 
@@ -74,5 +78,7 @@ function previewFile(){
     } else {
         preview.src = "";
     }
+
 }
+
 

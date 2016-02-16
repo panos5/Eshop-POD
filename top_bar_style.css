@@ -64,7 +64,6 @@ body{
 }
 
 
-
 #center_top {
 
     margin-top    : 85px;
@@ -147,5 +146,14 @@ body{
 #stay_black:hover{
 
     color : black;
+
+}
+
+
+#user_name_tag {
+
+    font-family: chinese;
+    font-size:21px;
+    color: #3180d1;
 
 }

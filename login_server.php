@@ -17,8 +17,9 @@
     // Check the status of the connection
     if ($conn->connect_error)
     {
-        die("Connection failed: " . $conn->connect_error);
         alert("The connection has timed-out!!!");
+        die("Connection failed: " . $conn->connect_error);
+
     }
 
 
@@ -38,7 +39,7 @@
 
             $result->status = "OK";
             session_start();
-            $_SESSION['login_user'] = $userName;
+            $_SESSION['login_user'] = strtoupper($userName);
         }
 
 

@@ -29,8 +29,8 @@
                    <li id="products"><a href="products.html">Products</a></li>
 
                    <ul style="float:right;list-style-type:none;">
-                        <li style="margin-right: 4px;">User : </li>
-                        <li id="user_name_tag" style="color:#258CD1;"><?php echo$_SESSION['login_user'];?></li>
+                        <li style="margin-right: 4px;">User :&nbsp; </li>
+                        <li id="user_name_tag"><?php echo$_SESSION['login_user'];?></li>
                         <li> <a href="sign_out.php"><span id="stay_black">/</span> Sign out</a></li>
                    </ul>
                 </ul>
@@ -45,7 +45,7 @@
             
         </div>
 
-        <div id="myDiv" data-value="@Request.RequestContext.HttpContext.Session['login_user']"></div>
+        <div id="userNameHolder" data-value="@Request.RequestContext.HttpContext.Session['login_user']"></div>
 
     </body>
 
