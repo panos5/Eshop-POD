@@ -10,7 +10,6 @@ $(document).ready(function () {
 
         if(userConfirmation() == true) {
 
-
             var oldUserName = document.getElementById('user_name_tag').innerHTML.trim();
             var newUserName = document.getElementById('userName').value;
             var userFirstName = document.getElementById('firstName').value;
@@ -21,6 +20,10 @@ $(document).ready(function () {
             var userHomeAddress = document.getElementById('userAddress2').value;
             var userPostcode = document.getElementById('userPostcode').value;
             var userTelephone = document.getElementById('userTelephone').value;
+
+            var img = $('#image_file_to_upload').src;
+
+            console.log(img);
 
 
             $.ajax({
@@ -90,7 +93,9 @@ $(document).ready(function () {
         }
 
 
+
         function move() {
+
             var elem = document.getElementById("myBar");
             var width = 0;
             var id = setInterval(frame, 10);

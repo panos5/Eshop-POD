@@ -55,7 +55,7 @@
             $result->status = "OK";
 
             session_start();
-            $_SESSION['login_user'] = $userName;
+            $_SESSION['login_user'] = strtoupper($userName);
         }
 
     }

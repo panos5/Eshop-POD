@@ -14,8 +14,9 @@
     // Check the status of the connection
     if ($conn->connect_error)
     {
-        die("Connection failed: " . $conn->connect_error);
         alert("The connection has timed-out!!!");
+        die("Connection failed: " . $conn->connect_error);
+
     }
 
     else
@@ -24,7 +25,8 @@
         $data->response = array();
         $result = new stdclass();
 
-        $previous_orders_sql =  mysqli_query($conn , "SELECT product_id , price , order_date   FROM register,orders WHERE register.user_name = orders.user_name AND register.user_name = '$userName'");
+        $previous_orders_sql =  mysqli_query($conn , "SELECT product_id , price , order_date   FROM register,orders
+                                                      WHERE register.user_name = orders.user_name AND register.user_name = '$userName'");
 
 
         if(mysqli_num_rows($previous_orders_sql)>0)

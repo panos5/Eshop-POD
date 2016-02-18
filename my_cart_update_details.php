@@ -8,7 +8,7 @@
     //Create connection with the database
     $conn = new mysqli($serverName, $userName, $password , $database);
 
-    //Retrieves the two values sent from the ajax request
+    //Retrieves the values sent from the ajax request
     $userName = $_GET["userName"];
     $newUserName = $_GET["newUserName"];
     $firstName = $_GET["firstName"];
@@ -24,13 +24,14 @@
     if ($conn->connect_error)
     {
 
-        die("Connection failed: " . $conn->connect_error);
         alert("The connection has timed-out!!!");
+        die("Connection failed: " . $conn->connect_error);
     }
 
 
     else
     {
+
         $data = new stdclass();
         $data->response = array();
         $result = new stdclass();

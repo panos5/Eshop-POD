@@ -8,12 +8,43 @@ $(document).ready(function () {
 
     $("#log_in_button").click(function() {
 
+         log_in()
+
+    });
+
+
+
+    $("#toggle_password").click(function() {
+
+
+        var checked = $("#toggle_password").is(':checked');
+
+        if(checked == true)
+        {
+            $('#userPassword').attr('type','text');
+        }
+
+        else
+        {
+            $('#userPassword').attr('type','password');
+        }
+
+
+    });
+
+});
+
+    function log_in()
+    {
+
+
         var user = $('#userName').val();
         var pass = $('#userPassword').val();
 
         $('#userName').removeClass("empty_field");
         $('#userPassword').removeClass("empty_field");
 
+       console.log("Hello".$user);
 
         if (user && pass)
         {
@@ -59,29 +90,10 @@ $(document).ready(function () {
 
         }
 
-    });
+
+    }
 
 
-
-    $("#toggle_password").click(function() {
-
-
-        var checked = $("#toggle_password").is(':checked');
-
-        if(checked == true)
-        {
-            $('#userPassword').attr('type','text');
-        }
-
-        else
-        {
-            $('#userPassword').attr('type','password');
-        }
-
-
-    });
-
-});
 
 
     // Checks if input fields are empty or not and notify users with relevant alert messages
