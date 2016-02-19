@@ -7,6 +7,7 @@ $("#previous_orders").click(function() {
 
  var userName = document.getElementById('user_name_tag').innerHTML.trim();
 
+
     $.ajax({
 
         type: "GET",
@@ -15,41 +16,66 @@ $("#previous_orders").click(function() {
         data: {userName: userName},
         success: function (data) {
 
-            var status = data.response[0].status;
-            var orders_history = data.response[0].orders;
+            var status = data.status;
 
             if (status == "OK")
             {
 
-                var new_orders_list = document.createElement('ul');
-                new_orders_list.setAttribute("style" , "width: 1200px; height:450px;");
+                var products_size = data.past_orders.length;
 
-                for(var i=0; i<orders_history.length;i++)
+                console.log(products_size);
+
+                var table = document.createElement('table');
+                table.classList.add("black_border")
+
+                var th1 = document.createElement('TH');
+                var th2 = document.createElement('TH');
+                var th3 = document.createElement('TH');
+
+                th1.appendChild(document.createTextNode("Product Name"));
+                th2.appendChild(document.createTextNode("Price"));
+                th3.appendChild(document.createTextNode("Order Date"));
+                th1.classList.add("table_config" ,"header_color");
+                th2.classList.add("table_config" ,"header_color");
+                th3.classList.add("table_config" ,"header_color");
+
+
+
+                table.appendChild(th1);
+                table.appendChild(th2);
+                table.appendChild(th3);
+
+                console.log(" ID     "  + "Price    " + "Date Ordered" +  "\n");
+
+                for (var i = 0; i < products_size; i++)
                 {
-                        var product_panel = document.createElement('div');
 
-                        var new_product_details = document.createElement('ul');
-                        new_product_details.setAttribute("style" , "border:2px dotted salmon; box-shadow:10px 10px 5px #888888;  " +
-                                                         "display:inline-block; float:left; margin:35px; padding:20px; border-radius:10px;");
+                    var tr = document.createElement('tr');
 
-                        var product = document.createElement('li');
-                        var price = document.createElement('li');
-                        var order_date = document.createElement('li');
+                    var td1 = document.createElement('td');
+                    var td2 = document.createElement('td');
+                    var td3 = document.createElement('td');
 
-                        product.appendChild(document.createTextNode('Product ID : '  + orders_history[i][0]));
-                        price.appendChild(document.createTextNode('Product price : ' + orders_history[i][1] + '£'));
-                        order_date.appendChild(document.createTextNode('Purchase date: ' + orders_history[i][2]));
+                    td1.appendChild(document.createTextNode(data.past_orders[i][0]));
+                    td2.appendChild(document.createTextNode(data.past_orders[i][1]  + " £ "));
+                    td3.appendChild(document.createTextNode(data.past_orders[i][2]));
 
-                        new_product_details.appendChild(order_date);
-                        new_product_details.appendChild(product);
-                        new_product_details.appendChild(price);
-                        product_panel.appendChild(new_product_details);
-                        new_orders_list.appendChild(product_panel);
+                    td1.classList.add("table_config");
+                    td2.classList.add("table_config");
+                    td3.classList.add("table_config");
 
+                    tr.appendChild(td1);
+                    tr.appendChild(td2);
+                    tr.appendChild(td3);
 
+                    table.appendChild(tr);
+
+                    console.log(data.past_orders[i][0] + "     " + data.past_orders[i][1] +   "     " + data.past_orders[i][2] +  "\n");
                 }
 
-                $("#previous_orders_panel ul").replaceWith(new_orders_list);
+
+                $("#table_details").css({"visibility":'visible'});
+                $("#table_details table").replaceWith(table);
 
             }
 

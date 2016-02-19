@@ -12,9 +12,9 @@
       <table id="3" parent="1" name="orders"/>
       <table id="4" parent="1" name="products"/>
       <table id="5" parent="1" name="images"/>
-      <column id="6" parent="2" name="register_id">
+      <column id="6" parent="2" name="user_id">
         <mandatory>1</mandatory>
-        <data-type>int(10)</data-type>
+        <data-type>varchar(20)</data-type>
       </column>
       <column id="7" parent="2" name="user_name">
         <data-type>varchar(45)</data-type>
@@ -49,7 +49,7 @@
         <unique>1</unique>
       </index>
       <key id="17" parent="2" name="PRIMARY">
-        <columns>register_id</columns>
+        <columns>user_id</columns>
         <primary>1</primary>
       </key>
       <key id="18" parent="2" name="user_name_UNIQUE">
@@ -60,33 +60,39 @@
         <mandatory>1</mandatory>
         <data-type>int(10)</data-type>
       </column>
-      <column id="20" parent="3" name="user_name">
-        <data-type>varchar(45)</data-type>
+      <column id="20" parent="3" name="user_id">
+        <mandatory>1</mandatory>
+        <data-type>varchar(30)</data-type>
       </column>
       <column id="21" parent="3" name="product_id">
-        <data-type>varchar(10)</data-type>
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
       </column>
-      <column id="22" parent="3" name="price">
-        <data-type>decimal(5,2)</data-type>
-      </column>
-      <column id="23" parent="3" name="order_date">
+      <column id="22" parent="3" name="order_date">
+        <mandatory>1</mandatory>
         <data-type>date</data-type>
       </column>
-      <column id="24" parent="3" name="product_image">
-        <mandatory>1</mandatory>
-        <data-type>blob</data-type>
-      </column>
-      <index id="25" parent="3" name="user_name_idx">
-        <columns>user_name</columns>
+      <index id="23" parent="3" name="product_id_idx">
+        <columns>product_id</columns>
         <desc-columns></desc-columns>
       </index>
-      <key id="26" parent="3" name="PRIMARY">
+      <index id="24" parent="3" name="user_name_idx">
+        <columns>user_id</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <key id="25" parent="3" name="PRIMARY">
         <columns>order_id</columns>
         <primary>1</primary>
       </key>
-      <foreign-key id="27" parent="3" name="user_name">
-        <columns>user_name</columns>
-        <ref-key>~.register.user_name_UNIQUE</ref-key>
+      <foreign-key id="26" parent="3" name="product_id">
+        <columns>product_id</columns>
+        <ref-key>~.products.PRIMARY</ref-key>
+        <cascade-update-rule>restrict</cascade-update-rule>
+        <cascade-delete-rule>restrict</cascade-delete-rule>
+      </foreign-key>
+      <foreign-key id="27" parent="3" name="user_id">
+        <columns>user_id</columns>
+        <ref-key>~.register.PRIMARY</ref-key>
         <cascade-update-rule>restrict</cascade-update-rule>
         <cascade-delete-rule>restrict</cascade-delete-rule>
       </foreign-key>
@@ -103,31 +109,34 @@
       <column id="31" parent="4" name="stock">
         <data-type>int(11)</data-type>
       </column>
-      <key id="32" parent="4" name="PRIMARY">
+      <column id="32" parent="4" name="description">
+        <data-type>varchar(60)</data-type>
+      </column>
+      <key id="33" parent="4" name="PRIMARY">
         <columns>product_id</columns>
         <primary>1</primary>
       </key>
-      <column id="33" parent="5" name="image_id">
+      <column id="34" parent="5" name="image_id">
         <mandatory>1</mandatory>
         <data-type>int(11)</data-type>
       </column>
-      <column id="34" parent="5" name="name">
+      <column id="35" parent="5" name="name">
         <mandatory>1</mandatory>
         <data-type>varchar(45)</data-type>
       </column>
-      <column id="35" parent="5" name="content">
+      <column id="36" parent="5" name="content">
         <mandatory>1</mandatory>
         <data-type>blob</data-type>
       </column>
-      <column id="36" parent="5" name="type">
+      <column id="37" parent="5" name="type">
         <mandatory>1</mandatory>
         <data-type>varchar(45)</data-type>
       </column>
-      <column id="37" parent="5" name="size">
+      <column id="38" parent="5" name="size">
         <mandatory>1</mandatory>
         <data-type>int(11)</data-type>
       </column>
-      <key id="38" parent="5" name="PRIMARY">
+      <key id="39" parent="5" name="PRIMARY">
         <columns>image_id</columns>
         <primary>1</primary>
       </key>

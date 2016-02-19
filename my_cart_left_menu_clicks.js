@@ -10,7 +10,7 @@ $(document).ready(function () {
 
     $("#previous_orders").click(function () {
 
-        $("#previous_orders_panel").css("visibility","visible");
+        $("#table_details").css("visibility","visible");
         $("#my_shopping_cart_panel").css("visibility", "hidden");
 
         swapColorElements(previous_ord , shopping_cart);
@@ -20,7 +20,7 @@ $(document).ready(function () {
 
     $("#my_shopping_cart").click(function () {
 
-        $("#previous_orders_panel").css("visibility", "hidden");
+        $("#table_details").css("visibility", "hidden");
         $("#my_shopping_cart_panel").css("visibility", "visible");
 
         swapColorElements(shopping_cart , previous_ord);

@@ -44,7 +44,6 @@ $(document).ready(function () {
         $('#userName').removeClass("empty_field");
         $('#userPassword').removeClass("empty_field");
 
-       console.log("Hello".$user);
 
         if (user && pass)
         {
@@ -92,7 +91,6 @@ $(document).ready(function () {
 
 
     }
-
 
 
 

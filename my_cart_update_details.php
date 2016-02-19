@@ -36,14 +36,14 @@
         $data->response = array();
         $result = new stdclass();
 
-        $register_number_sql =  mysqli_query($conn , "SELECT register_id FROM register WHERE user_name = '$userName'");
+        $register_number_sql =  mysqli_query($conn , "SELECT user_id FROM register WHERE user_name = '$userName'");
 
 
         while($row = mysqli_fetch_array( $register_number_sql, MYSQLI_ASSOC))
         {
 
-            $result->regNumber = $row['register_id'];
-            $register_number =$result->regNumber;
+            $result->regNumber = $row['user_id'];
+            $register_number = $result->regNumber;
 
         }
 
@@ -52,7 +52,7 @@
                                  SET first_name = '$firstName' , user_name = '$newUserName' , last_name='$lastName' , password='$password',
                                  email='$email', street_address='$street_address',  home_address='$home_address',
                                  postcode='$postcode',telephone='$telephone'
-                                 WHERE register_id='$register_number'");
+                                 WHERE user_id='$register_number'");
 
 
         if($update_register_sql)

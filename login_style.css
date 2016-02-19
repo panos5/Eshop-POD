@@ -42,3 +42,10 @@
     animation: bounce .3s 2 linear alternate;
 
 }
+
+.color_change:focus {
+
+    border: 2px solid #9674db;
+    box-shadow : 2px 2px 3px #c77bff;
+
+}

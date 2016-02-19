@@ -22,32 +22,34 @@
     else
     {
         $data = new stdclass();
-        $data->response = array();
-        $result = new stdclass();
+        $data->status = "";
+        $past_orders = [];
 
-        $previous_orders_sql =  mysqli_query($conn , "SELECT product_id , price , order_date   FROM register,orders
-                                                      WHERE register.user_name = orders.user_name AND register.user_name = '$userName'");
+        $previous_orders_sql =  mysqli_query($conn , "SELECT name , price , order_date   FROM register , orders , products
+                                                      WHERE register.user_id = orders.user_id AND  orders.product_id = products.product_id
+                                                      AND register.user_name = '$userName'");
 
 
         if(mysqli_num_rows($previous_orders_sql)>0)
         {
+
+            $data->status = "OK";
+
             while($row = mysqli_fetch_array( $previous_orders_sql , MYSQLI_NUM))
             {
-                $result->orders[] = $row;
+                $data-> past_orders[] = $row;
             }
 
-            $result->status = "OK";
+
         }
 
         else
         {
-            $result->status = "Failed";
+            $data->status = "Failed";
             mysqli_error($conn);
         }
 
     }
-
-    $data->response[] = $result;
 
     echo json_encode($data);
 

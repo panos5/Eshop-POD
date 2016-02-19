@@ -27,7 +27,7 @@
     {
 
         //Sql request to check if the details sent by the client in order to login are correct
-        $sql = mysqli_query($conn, "SELECT user_name,password FROM register WHERE user_name='$userName' AND password='$userPassword'");
+        $sql = mysqli_query($conn, "SELECT user_name , password FROM register WHERE user_name='$userName'  AND password='$userPassword'");
 
         $data = new stdclass();
         $data->response = array();
