@@ -21,60 +21,86 @@ $(document).ready(function () {
             var userPostcode = document.getElementById('userPostcode').value;
             var userTelephone = document.getElementById('userTelephone').value;
 
-            var img = $('#image_file_to_upload').src;
+            $("#userEmail").removeClass("red_empty_borders");
+            $("#userTelephone").removeClass("red_empty_borders");
 
-            console.log(img);
+
+            if(!isNaN(userTelephone) && validateEmail(userEmail)) {
+
+                $.ajax({
+
+                    type: "GET",
+                    url: "my_cart_update_details.php",
+                    dataType: "json",
+                    data: {
+
+                        userName: oldUserName,
+                        newUserName: newUserName,
+                        firstName: userFirstName,
+                        lastName: userLastName,
+                        password: userPassword,
+                        email: userEmail,
+                        streetAddress: userStreetAddress,
+                        homeAddress: userHomeAddress,
+                        postcode: userPostcode,
+                        telephone: userTelephone
+                    },
+                    success: function (data) {
+
+                        var status = data.response[0].status;
+
+                        if (status == "OK") {
+
+                            alert("Details updated successfully!!!");
+                            location.reload();
+                        }
 
 
-            $.ajax({
+                        else if (status == 'Failed') {
 
-                type: "GET",
-                url: "my_cart_update_details.php",
-                dataType: "json",
-                data: {
+                            alert("Details couldn't manage to update !!!");
 
-                    userName: oldUserName,
-                    newUserName: newUserName,
-                    firstName: userFirstName,
-                    lastName: userLastName,
-                    password: userPassword,
-                    email: userEmail,
-                    streetAddress: userStreetAddress,
-                    homeAddress: userHomeAddress,
-                    postcode: userPostcode,
-                    telephone: userTelephone
-                },
-                success: function (data) {
+                        }
 
-                    var status = data.response[0].status;
+                        else if (status == 'nameFailed') {
 
-                    if (status == "OK") {
+                            alert(" Username already exists!!!");
 
-                        alert("Details updated successfully!!!");
-                        location.reload();
+                        }
+
+                    },
+
+                    error: function (xhr, ajaxOptions, thrownError) {
+                        alert(xhr.status);
+                        alert(thrownError);
                     }
 
+                })
+            }
 
-                    else if (status == 'Failed') {
+            else if(isNaN(userTelephone) && validateEmail(userEmail) == false)
+            {
 
-                        alert("Details couldn't manage to update !!!");
+                alert("Please enter a proper telephone number and email address!!")
+                $("#userTelephone").addClass("red_empty_borders");
+                $("#userEmail").addClass("red_empty_borders");
 
-                    }
+            }
 
-                    else if (status == 'nameFailed') {
+            else if(isNaN(userTelephone))
+            {
 
-                        alert(" Username already exists!!!");
+                alert("Please enter a proper telephone number containing only digits!!")
+                $("#userTelephone").addClass("red_empty_borders");
 
-                    }
+            }
+            else if ( validateEmail(userEmail) == false )
+            {
 
-                },
+                alert("Please enter a proper email address!!")
+                $("#userEmail").addClass("red_empty_borders");
 
-                error: function (xhr, ajaxOptions, thrownError) {
-                    alert(xhr.status);
-                    alert(thrownError);
-                }
-
-            });
+            }
 
         }
 
@@ -115,6 +141,29 @@ $(document).ready(function () {
                 }
             }
         }
+
+
+        function validateEmail(inputEmail)
+        {
+
+            var status = "";
+            var emailRegEx = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i;
+
+            if (inputEmail.search(emailRegEx) == -1)
+            {
+                status = false;
+            }
+
+
+            else
+            {
+                status = true;
+            }
+
+
+            return status;
+        }
+
 
     });
 

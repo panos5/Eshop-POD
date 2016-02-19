@@ -38,13 +38,14 @@
 
         $check_username_exist_sql = mysqli_query($conn , "SELECT user_id FROM register WHERE user_name = '$newUserName'");
 
-        if(mysqli_num_rows($check_username_exist_sql)>0)
+        if(mysqli_num_rows($check_username_exist_sql)>0 && $userName != $newUserName)
         {
 
             $result->status = "nameFailed";
         }
 
         else
+
         {
 
             $register_number_sql = mysqli_query($conn, "SELECT user_id FROM register WHERE user_name = '$userName'");
@@ -61,6 +62,7 @@
                                  email='$email', street_address='$street_address',  home_address='$home_address',
                                  postcode='$postcode',telephone='$telephone'
                                  WHERE user_id = '$register_number'");
+
 
             if ($update_register_sql)
             {

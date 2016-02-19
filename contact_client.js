@@ -58,24 +58,24 @@ $(document).ready(function () {
 
             alert("Your email and name fields are empty!!")
 
-            $('#userName').addClass("red_field");
-            $('#userEmail').addClass("red_field");
+            $('#userName').addClass("red_empty_borders");
+            $('#userEmail').addClass("red_empty_borders");
         }
 
 
         else if(email == "" && user)
         {
 
-            $('#userName').removeClass("red_field");
-            $('#userEmail').addClass("red_field");
+            $('#userName').removeClass("red_empty_borders");
+            $('#userEmail').addClass("red_empty_borders");
         }
 
 
         else if(user == "")
         {
 
-            $('#userName').addClass("red_field");
-            $('#userEmail').removeClass("red_field");
+            $('#userName').addClass("red_empty_borders");
+            $('#userEmail').removeClass("red_empty_borders");
         }
 
 
@@ -84,7 +84,7 @@ $(document).ready(function () {
         {
 
             alert("Your message is empty")
-            $('#userMessage').addClass("red_field");
+            $('#userMessage').addClass("red_empty_borders");
 
         }*/
 

@@ -41,8 +41,8 @@ $(document).ready(function () {
         var user = $('#userName').val();
         var pass = $('#userPassword').val();
 
-        $('#userName').removeClass("empty_field");
-        $('#userPassword').removeClass("empty_field");
+        $('#userName').removeClass("red_empty_borders");
+        $('#userPassword').removeClass("red_empty_borders");
 
 
         if (user && pass)
@@ -102,15 +102,15 @@ $(document).ready(function () {
         if(userName=="" && password=="")
         {
             alert("Username and password fields are empty");
-            $('#userName').addClass("empty_field");
-            $('#userPassword').addClass("empty_field");
+            $('#userName').addClass("red_empty_borders");
+            $('#userPassword').addClass("red_empty_borders");
         }
 
 
         else if(userName=="")
         {
             alert("Username is empty!!");
-            $('#userName').addClass("empty_field");
+            $('#userName').addClass("red_empty_borders");
 
         }
 
@@ -118,7 +118,7 @@ $(document).ready(function () {
         else if(password=="")
         {
             alert("Password is empty!!");
-            $('#userPassword').addClass("empty_field");
+            $('#userPassword').addClass("red_empty_borders");
         }
 
     }

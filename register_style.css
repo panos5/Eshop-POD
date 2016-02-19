@@ -1,15 +1,3 @@
-
-@-webkit-keyframes bounce {
-    to { -webkit-transform: scale(0.8); }
-}
-@-moz-keyframes bounce {
-    to { -moz-transform: scale(0.8); }
-}
-@keyframes bounce {
-    to { transform: scale(0.8); }
-}
-
-
 #register_form {
 
     position         : relative;
@@ -44,12 +32,23 @@
 }
 
 
-.red_empty_borders {
+/*@-webkit-keyframes bounce {
+    to { -webkit-transform: scale(0.8); }
+}
+@-moz-keyframes bounce {
+    to { -moz-transform: scale(0.8); }
+}
+@keyframes bounce {
+    to { transform: scale(0.8); }
+}*/
+
+
+/*.red_empty_borders {
 
     border :2px dotted #ff0024 ;
     -webkit-animation: bounce .3s 4 linear alternate;
     -moz-animation: bounce .3s 4 linear alternate;
     animation: bounce .3s 4 linear alternate;
 
-}
+}*/
 

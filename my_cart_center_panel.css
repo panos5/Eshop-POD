@@ -123,18 +123,17 @@ h4 {
 
 .table_config{
 
-    border  : 2px dotted black;
-    padding : 5px 40px;
-    width:140px;
-    text-align:center;
+    border     : 2px dotted black;
+    padding    : 5px 40px;
+    width      : 140px;
+    text-align : center;
 
 }
 
 .black_border {
 
-margin:auto;
-
-    border     : 1px solid black;
+    margin : auto;
+    border : 1px solid black;
 }
 
 .header_color {
@@ -142,6 +141,8 @@ margin:auto;
    color : green;
 
 }
+
+
 
 
 
