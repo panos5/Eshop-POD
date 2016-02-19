@@ -32,6 +32,7 @@ $(document).ready(function () {
                 url: "my_cart_update_details.php",
                 dataType: "json",
                 data: {
+
                     userName: oldUserName,
                     newUserName: newUserName,
                     firstName: userFirstName,
@@ -57,6 +58,12 @@ $(document).ready(function () {
                     else if (status == 'Failed') {
 
                         alert("Details couldn't manage to update !!!");
+
+                    }
+
+                    else if (status == 'nameFailed') {
+
+                        alert(" Username already exists!!!");
 
                     }
 

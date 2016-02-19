@@ -36,39 +36,46 @@
         $data->response = array();
         $result = new stdclass();
 
-        $register_number_sql =  mysqli_query($conn , "SELECT user_id FROM register WHERE user_name = '$userName'");
+        $check_username_exist_sql = mysqli_query($conn , "SELECT user_id FROM register WHERE user_name = '$newUserName'");
 
-
-        while($row = mysqli_fetch_array( $register_number_sql, MYSQLI_ASSOC))
+        if(mysqli_num_rows($check_username_exist_sql)>0)
         {
 
-            $result->regNumber = $row['user_id'];
-            $register_number = $result->regNumber;
-
+            $result->status = "nameFailed";
         }
 
-
-        $update_register_sql = mysqli_query($conn, " UPDATE register
-                                 SET first_name = '$firstName' , user_name = '$newUserName' , last_name='$lastName' , password='$password',
-                                 email='$email', street_address='$street_address',  home_address='$home_address',
-                                 postcode='$postcode',telephone='$telephone'
-                                 WHERE user_id='$register_number'");
-
-
-        if($update_register_sql)
-        {
-
-            $result->status = "OK";
-            session_start();
-            $_SESSION['login_user'] = $newUserName;
-        }
         else
         {
-            $result->status = "Failed";
-            mysqli_error($conn);
-            echo(mysqli_error($conn));
-        }
 
+            $register_number_sql = mysqli_query($conn, "SELECT user_id FROM register WHERE user_name = '$userName'");
+
+            while ($row = mysqli_fetch_array($register_number_sql, MYSQLI_ASSOC))
+            {
+                $result->regNumber = $row['user_id'];
+                $register_number = $result->regNumber;
+            }
+
+
+            $update_register_sql = mysqli_query($conn, " UPDATE register
+                                 SET user_name= '$newUserName' , first_name = '$firstName' , user_name = '$newUserName' , last_name='$lastName' , password='$password',
+                                 email='$email', street_address='$street_address',  home_address='$home_address',
+                                 postcode='$postcode',telephone='$telephone'
+                                 WHERE user_id = '$register_number'");
+
+            if ($update_register_sql)
+            {
+
+                $result->status = "OK";
+                session_start();
+                $_SESSION['login_user'] = $newUserName;
+            }
+            else
+            {
+                $result->status = "Failed";
+                mysqli_error($conn);
+                echo(mysqli_error($conn));
+            }
+        }
     }
 
     $data->response[] = $result;
