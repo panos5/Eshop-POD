@@ -32,20 +32,18 @@ $("#previous_orders").click(function() {
                 var th2 = document.createElement('TH');
                 var th3 = document.createElement('TH');
 
-                th1.appendChild(document.createTextNode("Product Name"));
-                th2.appendChild(document.createTextNode("Price"));
-                th3.appendChild(document.createTextNode("Order Date"));
+                th1.appendChild(document.createTextNode("Order ID"));
+                th2.appendChild(document.createTextNode("Order Date"));
+                th3.appendChild(document.createTextNode("Price"));
                 th1.classList.add("table_config" ,"header_color");
                 th2.classList.add("table_config" ,"header_color");
                 th3.classList.add("table_config" ,"header_color");
-
-
 
                 table.appendChild(th1);
                 table.appendChild(th2);
                 table.appendChild(th3);
 
-                console.log(" ID     "  + "Price    " + "Date Ordered" +  "\n");
+                console.log("ID  "  + " Date Ordered   " + "  Price" +  "\n");
 
                 for (var i = 0; i < products_size; i++)
                 {
@@ -56,9 +54,9 @@ $("#previous_orders").click(function() {
                     var td2 = document.createElement('td');
                     var td3 = document.createElement('td');
 
-                    td1.appendChild(document.createTextNode(data.past_orders[i][0]));
-                    td2.appendChild(document.createTextNode(data.past_orders[i][1]  + " £ "));
-                    td3.appendChild(document.createTextNode(data.past_orders[i][2]));
+                    td1.appendChild(document.createTextNode(data.past_orders[i]["order_id"]));
+                    td2.appendChild(document.createTextNode(data.past_orders[i]["order_date"]));
+                    td3.appendChild(document.createTextNode(data.past_orders[i]["price"] + " £ "));
 
                     td1.classList.add("table_config");
                     td2.classList.add("table_config");
@@ -70,7 +68,7 @@ $("#previous_orders").click(function() {
 
                     table.appendChild(tr);
 
-                    console.log(data.past_orders[i][0] + "     " + data.past_orders[i][1] +   "     " + data.past_orders[i][2] +  "\n");
+                    console.log(data.past_orders[i]["order_id"] + "     " + data.past_orders[i]["order_date"] +   "     " + data.past_orders[i]["price"] + " £ " +  "\n");
                 }
 
 

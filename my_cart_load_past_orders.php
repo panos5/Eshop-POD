@@ -25,9 +25,13 @@
         $data->status = "";
         $past_orders = [];
 
-        $previous_orders_sql =  mysqli_query($conn , "SELECT name , price , order_date ,description   FROM register , orders , products
-                                                      WHERE register.user_id = orders.user_id AND  orders.product_id = products.product_id
-                                                      AND register.user_name = 'troll'");
+        $previous_orders_sql =  mysqli_query($conn , "SELECT order_products.order_id , order_date , product_id , price
+                                                      FROM   register , orders , order_products , products
+                                                      WHERE  register.user_id = orders.user_id
+                                                      AND    orders.order_id  = order_products.order_id
+                                                      AND    products.product_id = order_products.product_num
+                                                      AND    user_name = 'elf'");
+
 
 
         if(mysqli_num_rows($previous_orders_sql)>0)
@@ -35,11 +39,10 @@
 
             $data->status = "OK";
 
-            while($row = mysqli_fetch_array( $previous_orders_sql , MYSQLI_NUM))
+            while($row = mysqli_fetch_array( $previous_orders_sql , MYSQLI_ASSOC))
             {
                 $data-> past_orders[] = $row;
             }
-
 
         }
 
