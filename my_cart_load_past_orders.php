@@ -25,9 +25,9 @@
         $data->status = "";
         $past_orders = [];
 
-        $previous_orders_sql =  mysqli_query($conn , "SELECT name , price , order_date   FROM register , orders , products
+        $previous_orders_sql =  mysqli_query($conn , "SELECT name , price , order_date ,description   FROM register , orders , products
                                                       WHERE register.user_id = orders.user_id AND  orders.product_id = products.product_id
-                                                      AND register.user_name = '$userName'");
+                                                      AND register.user_name = 'troll'");
 
 
         if(mysqli_num_rows($previous_orders_sql)>0)

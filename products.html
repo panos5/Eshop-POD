@@ -9,6 +9,9 @@
         <title> Title </title>
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 
+        <link href='http://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet'>
+        <link rel="stylesheet" type="text/css" href="products_style.css">
+
     </head>
 
 
@@ -16,18 +19,31 @@
     <body background="Images/light_background_texture.jpg">
 
 
-    <script>
-        $(document).ready(function() {
+        <script>
+            $(document).ready(function() {
 
-            $("#MainPanel").load("toggle_products.php");
-            $("#TBar").load("toggle_top_bar.php");
-        });
+               /* $("#MainPanel").load("toggle_products.php");*/
+                $("#TBar").load("toggle_top_bar.php");
+                $("#BBar").load("bottom_bar.php");
+            });
 
-    </script>
+        </script>
+
 
         <div id="TBar"></div>
 
-        <div id="MainPanel"></div>
+            <h4 style="text-align:center; margin-top:50px;"> Products</h4>
+
+            <div id="products_panel">
+                <ul id="products_list"></ul>
+        </div>
+
+
+        <div id="BBar"></div>
+
+
+        <script src="my_cart_load_products.js"></script>  <!--Import of external javascript file-->
+        <script src="add_product_to_cart.js"></script>
 
     </body>
 
