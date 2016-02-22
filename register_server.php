@@ -1,13 +1,6 @@
 <?php
 
-    $serverName = "localhost";
-    $userName = "root";
-    $password = "root";
-    $database = "eshop";
-
-    // Create connection with the database
-    $conn = new mysqli($serverName, $userName, $password , $database);
-
+    include "database_connection.php";
 
     //Retrieves the two values sent from the ajax request
     $userName      =  $_GET["userName"];
@@ -20,47 +13,33 @@
     $postcode      =  $_GET["postcode"];
     $telephone     =  $_GET["telephone"];
 
+    $sql = mysqli_query($conn, "SELECT user_id FROM register WHERE user_name='$userName'");
+
+    $data = new stdclass();
+    $data->response = array();
+    $result = new stdclass();
 
 
-    // Check the status of the connection
-    if ($conn->connect_error)
+    if (mysqli_num_rows($sql) > 0)
     {
 
-        die("Connection failed: " . $conn->connect_error);
-        alert("The connection has timed-out!!!");
+        $result->status = "Failed";
     }
 
     else
     {
 
-        $sql = mysqli_query($conn, "SELECT user_id FROM register WHERE user_name='$userName'");
+        $randomNumber = strval( rand(1,20)."-" );
 
-        $data = new stdclass();
-        $data->response = array();
-        $result = new stdclass();
+        $sglInsertion = mysqli_query($conn, "INSERT INTO register(user_id, user_name, first_name, last_name , password , email, street_address , home_address , postcode ,telephone )
+                                              VALUES ('$randomNumber$userName','$userName','$firstName', '$lastName' ,'$userPassword','$userEmail','$streetNumber','$houseNumber','$postcode','$telephone')");
 
-
-        if (mysqli_num_rows($sql) > 0)
-        {
-
-            $result->status = "Failed";
-        }
-
-        else
-        {
-
-            $randomNumber = strval( rand(1,20)."-" );
-
-            $sglInsertion = mysqli_query($conn, "INSERT INTO register(user_id, user_name, first_name, last_name , password , email, street_address , home_address , postcode ,telephone )
-                                                  VALUES ('$randomNumber$userName','$userName','$firstName', '$lastName' ,'$userPassword','$userEmail','$streetNumber','$houseNumber','$postcode','$telephone')");
-
-
-            $result->status = "OK";
-            session_start();
-            $_SESSION['login_user'] = strtoupper($userName);
-        }
-
+        $result->status = "OK";
+        session_start();
+        $_SESSION['login_user'] = strtoupper($userName);
     }
+
+
 
     $data->response[] = $result;
 

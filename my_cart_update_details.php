@@ -1,36 +1,19 @@
 <?php
 
-    $serverName = "localhost";
-    $userName = "root";
-    $password = "root";
-    $database = "eshop";
+        include "database_connection.php";
 
-    //Create connection with the database
-    $conn = new mysqli($serverName, $userName, $password , $database);
+        //Retrieves the values sent from the ajax request
+        $userName = $_GET["userName"];
+        $newUserName = $_GET["newUserName"];
+        $firstName = $_GET["firstName"];
+        $lastName = $_GET["lastName"];
+        $password = $_GET["password"];
+        $email = $_GET["email"];
+        $street_address = $_GET["streetAddress"];
+        $home_address = $_GET["homeAddress"];
+        $postcode     = $_GET["postcode"];
+        $telephone   = $_GET["telephone"];
 
-    //Retrieves the values sent from the ajax request
-    $userName = $_GET["userName"];
-    $newUserName = $_GET["newUserName"];
-    $firstName = $_GET["firstName"];
-    $lastName = $_GET["lastName"];
-    $password = $_GET["password"];
-    $email = $_GET["email"];
-    $street_address = $_GET["streetAddress"];
-    $home_address = $_GET["homeAddress"];
-    $postcode     = $_GET["postcode"];
-    $telephone   = $_GET["telephone"];
-
-    // Check the status of the connection
-    if ($conn->connect_error)
-    {
-
-        alert("The connection has timed-out!!!");
-        die("Connection failed: " . $conn->connect_error);
-    }
-
-
-    else
-    {
 
         $data = new stdclass();
         $data->response = array();
@@ -77,8 +60,8 @@
                 mysqli_error($conn);
                 echo(mysqli_error($conn));
             }
+
         }
-    }
 
     $data->response[] = $result;
 
